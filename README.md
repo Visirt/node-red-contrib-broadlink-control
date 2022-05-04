@@ -67,7 +67,7 @@ Suggested process is as follows:
 3. Use the BroadLink app to connect to WiFi (keep your phone close to RM). AND STOP!!
 4. Do nothing more, dont't add anything more in the app, quit the app and now use the node.
 
-Thanks to <https://github.com/QuadrifoglioVerde> for the info ![here](https://github.com/home-assistant/core/issues/30215#issuecomment-581159499).
+Thanks to <https://github.com/QuadrifoglioVerde> for the info [here](https://github.com/home-assistant/core/issues/30215#issuecomment-581159499).
 
 ## Configuring the Broadlink App
 
