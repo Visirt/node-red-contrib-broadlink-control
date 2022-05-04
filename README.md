@@ -5,16 +5,16 @@
 [![GitHub license](https://img.shields.io/github/license/mlfunston/node-red-contrib-broadlink-control.svg)](https://github.com/mlfunston/node-red-contrib-broadlink-control/blob/master/LICENSE)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/mlfunston/node-red-contrib-broadlink-control.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmlfunston%2Fnode-red-contrib-broadlink-control)
 
-A set of node-red nodes to manage the Broadlink <http://www.ibroadlink.com/> RM series of IR Controllers and  for home automation. A cost effective way to control Air Conditioners, TV's, Audio equipment and many more like a universal remote control unit.
+A set of Node-RED nodes to manage the [Broadlink](http://www.ibroadlink.com/) RM series of IR Controllers and  for home automation. A cost effective way to control Air Conditioners, TV's, Audio equipment and many more like a universal remote control unit.
 
-This is a fork of the work by VladimirSFilippov <https://github.com/VladimirSFilippov/node-red-contrib-broadlink> with some enhancements and additions I was looking for, including documentation.
+This is a fork of the work by [VladimirSFilippov](https://github.com/VladimirSFilippov/node-red-contrib-broadlink) with some enhancements and additions I was looking for, including documentation.
 
 If you would like to donate to purchasing some testing hardware or want to buy me a coffee or beer, click here: <https://www.paypal.me/mlfunston>
 
 ## Supported Devices
 
-* RM-Mini 3 - <http://www.ibroadlink.com/rmMini3/>
-* RM-Pro - <http://www.ibroadlink.com/rmPro+/>
+* [RM-Mini 3](http://www.ibroadlink.com/rmMini3/)
+* [RM-Pro](http://www.ibroadlink.com/rmPro+/)
 * RM 4 and newer mini devices
 * MP1 - 4 Outlet Power Strip
 * SP2 - WiFi Smart Socket
@@ -22,27 +22,29 @@ If you would like to donate to purchasing some testing hardware or want to buy m
 
 Note: There are other nodes included per below list, however, I have not tested them as I don't have those devices. So let me know if you've had success using them.
 
-* A1 - Environment Sensor - <http://www.ibroadlink.com/a1/>
-* S1C - SmartONE Alarm Kit - <http://www.ibroadlink.com/s1c/>
+* [A1 - Environment Sensor](http://www.ibroadlink.com/a1/)
+* [S1C - SmartONE Alarm Kit](http://www.ibroadlink.com/s1c/)
 
 The TC2 device is not directly supported as it communicates via RF to the RM-Pro. However, if you have an RM Pro unit, you can pull the RF codes from the phone app after you have configured it and use those to control the switch. Note that you may need to send them multiple times to ensure it meets the requirements of being divisible by 16.
-Refer to this thread for similar process: <https://github.com/ericmagnuson/rmcontrol/issues/4#issuecomment-269480450>
+Refer to [this thread](https://github.com/ericmagnuson/rmcontrol/issues/4#issuecomment-269480450) for similar process.
 
 ## Installing and Setting up
 
-Add the Broadlink node to node-red through the manage palette tab or command line.
+Add the Broadlink node to Node-RED through the manage palette tab or command line.
 
-You can either learn commands directly from the RM unit using the node, or from the Broadlink e-control app and export them. You will need the SharedData folder (or broadlinkDB folder from the node) exported from the app as a starting point either way.
+Discover your Broadlink device by using the Discover node. This will reveal MAC Address, IP Address and Type Code needed to setup the config node.
 
-Please use the sample broadlinkDB folder as the catalog if you cannot / do not want to extract the file from the e-control app. The RM Node expects files to be formatted a certain way.
+You can either learn commands directly from the RM unit using the node, or from the Broadlink e-control app and export them. In the latter case, you will need the SharedData folder exported from the app as a starting point.
+
+Catalog folder (SharedData) is not needed if you plan to learn every command you will use, but using the sample broadlinkDB folder as the catalog might help since the RM Node expects IR data to be formatted a certain way.
 
 ## Community How-Tos, Videos & Articles
 
 If you find good content related to this set of nodes please share it below:
 
-* Boradlink Control Discussion Forum - <https://github.com/mlfunston/node-red-contrib-broadlink-control/discussions>
-* Video Tutorial: Broadlink RM4 Pro: Node-RED and Home Assistant setup - <https://youtu.be/1U346G3MHGM>
-* Article: Broadlink RM4 Pro: Node-RED and Home Assistant setup - <https://peyanski.com/broadlink-rm4-pro-with-home-assistant-and-node-red/>
+* [Broadlink Control Discussion Forum](https://github.com/mlfunston/node-red-contrib-broadlink-control/discussions)
+* Video Tutorial: [Broadlink RM4 Pro: Node-RED and Home Assistant setup](https://youtu.be/1U346G3MHGM)
+* Article: Broadlink RM4 Pro: [Node-RED and Home Assistant setup](https://peyanski.com/broadlink-rm4-pro-with-home-assistant-and-node-red/)
 
 ## Broadlink e-control App Method
 
@@ -56,7 +58,7 @@ Secondly, newer firmware / devices may not work with the older e-control app, so
 
 ### New Broadlink App and Cloud mode - Troubleshooting
 
-The latest Broadlink app may confiure the device in cloud mode which means that it will no longer function locally with this library. This is common for RM4 and RM3 Mini Newer device (eg device type 5f36). If you can discover the device but cannot learn or send, then you likely have this issue.
+The latest Broadlink app may confiure the device in cloud mode which means that it will no longer function locally with this library. This is common for RM4 and RM3 Mini newer devices (e.g. device type `5f36` or `2737`). If you can discover the device but cannot learn or send, then you likely have this issue.
 
 To reverse this, you will need to reset the device.
 
@@ -64,10 +66,10 @@ Suggested process is as follows:
 
 1. Remove any existing configured devices or control in the Broadlink app.
 2. Reset device by long press (~6 seconds) the reset button with a pin or paperclip until the LED rapidly flashes.
-3. Use the BroadLink app to connect to WiFi (keep your phone close to RM). AND STOP!!
+3. Use the BroadLink app to connect Broadlink device to WiFi (keep your phone close to it) AND STOP!!
 4. Do nothing more, dont't add anything more in the app, quit the app and now use the node.
 
-Thanks to <https://github.com/QuadrifoglioVerde> for the info [here](https://github.com/home-assistant/core/issues/30215#issuecomment-581159499).
+Thanks to [QuadrifoglioVerde](https://github.com/QuadrifoglioVerde) for the info [here](https://github.com/home-assistant/core/issues/30215#issuecomment-581159499).
 
 ## Configuring the Broadlink App
 
@@ -76,7 +78,7 @@ The app itself is not that intuitive, but after you add the RM device you will n
 1. Swipe left on the home screen to reveal your devices.
 2. Select the device
 3. Select the :gear: icon and add remote
-4. Click the `+` sign and add the buttons or functions you want to be able to use in node-red
+4. Click the `+` sign and add the buttons or functions you want to be able to use in Node-RED
 5. The app will ask you to point the remote at it and press the appropriate button
 6. Complete the process to add the buttons you need
 7. Click the :gear: icon and create shortcut if you want the device to be visible on the app home screen
@@ -86,10 +88,10 @@ Now you are ready to copy the config files from the device to use in the node!
 
 ## Copying the files from an iPhone
 
-1. Use an app like iExplorer <https://macroplant.com/iexplorer> and connect your iPhone to your computer and do a backup using the tool
+1. Use an app like [iExplorer](https://macroplant.com/iexplorer) and connect your iPhone to your computer and do a backup using the tool
 2. Explore the backup and open the Apps section of the backup
 3. Find the `cn.com.broadlink.e-Control` folder and export it to your computer
-4. Put the folder into a location where node-red can see it. You will need the path to the `cn.com.broadlink.e-Control.new/Documents/SharedData/` folder later
+4. Put the folder into a location where Node-RED can see it. You will need the path to the `cn.com.broadlink.e-Control.new/Documents/SharedData/` folder later
 
 ## Copying files from and Android phone
 
@@ -98,7 +100,7 @@ Perhaps someone can contribute here?
 
 Connect your Android device to your computer and browse the SD card/External Storage folder `/broadlink/newremote/SharedData/`.
 
-## Configuring node-red nodes
+## Configuring Node-RED nodes
 
 Assuming you have added the Broadlink nodes and configured as above, you will need the MAC address of the device, IP address and the path to the SharedData folder above. For device type, if you have an older device you can set the default value to `272a`. Newer RM3 devices or RM4 requires the correct device type to be entered. You can find your device type via the discover node. Check the example nodes below.
 
@@ -140,7 +142,7 @@ This should then be connected to the RM node to send the data.
 
 ## Examples
 
-There are example flows to provide some additional functions / templates to use. You can get the exmple flows from the Node Red hamburger menu (top right corner), choose Import -> Examples -> broadlink-control and pick your example.
+There are example flows to provide some additional functions / templates to use. You can get the example flows from the Node-RED hamburger menu (top right corner), choose Import -> Examples -> broadlink-control and pick your example.
 
 ### Example 1: Add new button to the RM node database
 
@@ -179,7 +181,7 @@ Set your RM device details in the RM nodes in the example and the data string in
 
 ## To Do
 
-* [x] Create GUI Tool or Example in the Node Red Dashboard to Learn and Send IR Codes - Check out the example nodes
+* [x] Create GUI Tool or Example in the Node-RED Dashboard to Learn and Send IR Codes - Check out the example nodes
 * [ ] Create function to read the newer DB from the Broadlink IHC App
 
 ## Authors & Contributors
