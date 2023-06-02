@@ -7,7 +7,7 @@
 
 A set of node-red nodes to manage the Broadlink <http://www.ibroadlink.com/> RM series of IR Controllers and  for home automation. A cost effective way to control Air Conditioners, TV's, Audio equipment and many more like a universal remote control unit.
 
-This is a fork of the work by VladimirSFilippov <https://github.com/VladimirSFilippov/node-red-contrib-broadlink> with some enhancements and additions I was looking for, including documentation.
+This is a fork of the work by VladimirSFilippov <https://github.com/VladimirSFilippov/node-red-contrib-broadlink> with some enhancements and additions I was looking for, including documentation. I don't have that much time to maintain this, so feel free to fork and submit a PR if you do any updates. It will help a lot.
 
 If you would like to donate to purchasing some testing hardware or want to buy me a coffee or beer, click here: <https://www.paypal.me/mlfunston>
 
@@ -204,7 +204,13 @@ Also thanks to the [python-broadlink](https://github.com/mjg59/python-broadlink)
 
 ## Changelog
 
-### v2.1.5 (latest)
+### v2.1.6 (latest)
+
+* Enhancement: Fix some content in the readme and broken links.
+
+Note - RF learn and send may not be working yet on the RM Pro 4 series but should be working in the earlier RM Pro units, although I don't have either to test with.
+
+### v2.1.5
 
 * Enhancement: Added RM4Pro typeid 0x5213. Issue #108.
 * Enhancement: Added SP04 typeid 0xa56c. Issue #107. (Note - May need further work - I cannot test this)
@@ -216,7 +222,7 @@ Also thanks to the [python-broadlink](https://github.com/mjg59/python-broadlink)
 
 Note - RF learn and send may not be working yet on the RM Pro 4 series but should be working in the earlier RM Pro units, although I don't have either to test with.
 
-### v2.1.4 (latest)
+### v2.1.4
 
 * Enhancement: Added RM4C Mini Device Type 0x653a. Issue #67.
 * Enhancement: Added RM4 Pro Device Type 0x653c. Issue #68.
