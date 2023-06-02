@@ -17,6 +17,7 @@
     "iot"
   ],
   "node-red": {
+    "version": ">=0.19.0",
     "nodes": {
       "rm": "nodes/RMNode.js",
       "rmreceiver": "nodes/RMReceiverNode.js",
