@@ -13,8 +13,8 @@ If you would like to donate to purchasing some testing hardware or want to buy m
 
 ## Supported Devices
 
-* [RM-Mini 3](http://www.ibroadlink.com/rmMini3/)
-* [RM-Pro](http://www.ibroadlink.com/rmPro+/)
+* RM-Mini 3
+* RM-Pro
 * RM 4 and newer mini devices
 * MP1 - 4 Outlet Power Strip
 * SP2 - WiFi Smart Socket
@@ -22,8 +22,8 @@ If you would like to donate to purchasing some testing hardware or want to buy m
 
 Note: There are other nodes included per below list, however, I have not tested them as I don't have those devices. So let me know if you've had success using them.
 
-* [A1 - Environment Sensor](http://www.ibroadlink.com/a1/)
-* [S1C - SmartONE Alarm Kit](http://www.ibroadlink.com/s1c/)
+* A1 - Environment Sensor
+* S1C - SmartONE Alarm Kit
 
 The TC2 device is not directly supported as it communicates via RF to the RM-Pro. However, if you have an RM Pro unit, you can pull the RF codes from the phone app after you have configured it and use those to control the switch. Note that you may need to send them multiple times to ensure it meets the requirements of being divisible by 16.
 Refer to [this thread](https://github.com/ericmagnuson/rmcontrol/issues/4#issuecomment-269480450) for similar process.
@@ -66,11 +66,10 @@ Suggested process is as follows:
 
 1. Remove any existing configured devices or control in the Broadlink app.
 2. Reset device by long press (~6 seconds) the reset button with a pin or paperclip until the LED rapidly flashes.
-3. Use the BroadLink app to connect Broadlink device to WiFi (keep your phone close to it) AND STOP!!
-4. Do nothing more, dont't add anything more in the app, quit the app and now use the node.
+3. Use the BroadLink app to connect to WiFi (keep your phone close to RM). AND STOP!!
+4. Do nothing more, dont't add anything more in the app, quit the app and now use the broadlink nodes in Node Red.
 
-Thanks to [QuadrifoglioVerde](https://github.com/QuadrifoglioVerde) for the info [here](https://github.com/home-assistant/core/issues/30215#issuecomment-581159499).
-
+If you have a locked device, you can also unlock it from the Broadlink app now. Try the instructions here <https://github.com/mlfunston/node-red-contrib-broadlink-control/issues/91>
 ## Configuring the Broadlink App
 
 The app itself is not that intuitive, but after you add the RM device you will need to add a user defined device (eg an air conditioner or tv) and buttons. If you use one of the built in devices the remote commands aren't recorded in the files, so make sure to use `user defined`.
@@ -206,6 +205,18 @@ This Node-RED module is based on the great work of **VladimirSFilippov** - [Vlad
 Also thanks to the [python-broadlink](https://github.com/mjg59/python-broadlink) repository from [Matthew Garrett](https://github.com/mjg59).
 
 ## Changelog
+
+### v2.1.5 (latest)
+
+* Enhancement: Added RM4Pro typeid 0x5213. Issue #108.
+* Enhancement: Added SP04 typeid 0xa56c. Issue #107. (Note - May need further work - I cannot test this)
+* Enhancement: Added RM4Pro typeid 0x520b. Issue #105.
+* Enhancement: Added RM4c Mini typeid 0x520d. Issue #104.
+* Enhancement: Added RM4c Mini typeid 0x648a. Issue #94, #93.
+* Enhancement: Added RM4c Mini typeid 0x5209. Issue #86.
+* Enhancement: Fix some content in the readme and broken links.
+
+Note - RF learn and send may not be working yet on the RM Pro 4 series but should be working in the earlier RM Pro units, although I don't have either to test with.
 
 ### v2.1.4 (latest)
 

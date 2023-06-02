@@ -57,6 +57,14 @@
                     else if (devtype == 0x653c) return 'RM4 Pro';
                     else if (devtype == 0x653a) return 'RM4 Mini';
                     else if (devtype == 0x7547) return 'SC1 - Use the SP2 Node';
+                    else if (devtype == 0x5213) return 'RM4 Pro';
+                    else if (devtype == 0xa56c) return 'SmartPlug4';
+                    else if (devtype == 0x520b) return 'RM4 Pro';
+                    else if (devtype == 0x520d) return 'RM4c Mini';
+                    else if (devtype == 0x5216) return 'RM4c Mini';
+                    else if (devtype == 0x648a) return 'RM4c Mini';
+                    else if (devtype == 0x648d) return 'RM4c Mini';
+                    else if (devtype == 0x5209) return 'RM4 Pro';
                     else return 'Broadlink: Unconfigured Device Type: Log an issue with the device details and typeid returned as this may be a new device type.';
                 }
                 
